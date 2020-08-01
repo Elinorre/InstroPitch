@@ -14,7 +14,7 @@ cffi==1.14.0
 chardet==3.0.4
 citipy==0.0.5
 click==7.1.2
-cloudinary==1.20.0
+cloudinary==1.22.0
 decorator==4.4.1
 defusedxml==0.6.0
 docutils==0.15.2
@@ -43,11 +43,11 @@ jupyter-client==5.3.4
 jupyter-console==6.0.0
 jupyter-core==4.6.1
 kdtree==0.16
-Keras==2.3.1
+Keras==2.4.3
 Keras-Applications==1.0.8
 Keras-Preprocessing==1.1.0
 lazy-object-proxy==1.4.3
-librosa==0.7.2
+librosa==0.6.3
 llvmlite==0.31.0
 MarkupSafe==1.1.1
 mccabe==0.6.1
@@ -88,6 +88,7 @@ six==1.13.0
 SoundFile==0.10.3.post1
 soupsieve==1.9.5
 splinter==0.13.0
+tensorflow==2.3.0
 terminado==0.8.3
 testpath==0.4.4
 tornado==6.0.3
