@@ -7,39 +7,40 @@
     padding: 0;
     list-style: none;
     text-decoration: none;
-    font-family: 'Montserrat';
+    font-family: monospace;
     }
 
     .header{
         width: 100%;
         height: 80px;
         display: block; 
-        background-color: black;
+        background-color: rgb(49, 31, 31);
         box-shadow: 10px 10px #DDD;
+
     }
     .inner_header{
-        width: 15%;
+        max-width: 15%;
         height: 100%;
         display: block;
-        margin:0 auto;
-        background-color:black;
+        margin: 0 auto;
+        background-color:rgb(49, 31, 31);
     }
 
    .loader{
-      float: center;
-       font-family: 'Montserrat';
-      font-size: 16px;
-      font-weight: 200;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      vertical-align: middle;
-      padding-top: 100px;
+        float: center;
+        font-family: monospace;
+        font-size: 18px;
+        font-weight: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        padding-top: 50px;
    }
    p{
       float: center;
-    font-family: 'Montserrat';
-      font-size: 16px;
+      font-family: monospace;
+      font-size: 2rem;
       font-weight: 200;
       display: flex;
       align-items: center;
@@ -62,7 +63,7 @@
         height: 100%;
         display: table-cell;
         vertical-align: middle;
-        font-family: 'Montserrat';
+        font-family: monospace;
         font-size: 32px;
         font-weight: 200;
     }
@@ -92,27 +93,31 @@
         vertical-align: middle;
         height:100%;
         color: white;
-        font-family: "Montserrat";
+        font-family: monospace;
         font-size: 10 px;
     }
 
     ul{
         padding-top: 3%;
-        font-family: "Montserrat";
+        font-family: monospace;
         text-align: center;
-        padding-bottom: 5%;
+        padding-bottom: 1%;
+        font-family: monospace;
       
     }
 
     li{
         list-style: inside circle;
         text-align:left;
-        padding-left: 45%;
+        padding-left: 35%;
         padding-top: 0.5%;
         
     }
 
-   
+   li p#li {
+       padding: 0;
+       font-size: 1.5rem;
+   }
 
    </style>
   
@@ -126,7 +131,7 @@
       <div class ="header">
          <div class = "inner_header"> 
              <div class = "logo_container">
-                 <h1>InstroPitch</h1>
+                 <h1 style="font-size: 2.5rem; font-family: monospace;">InstroPitch</h1>
              </div>
          </div>
      </div>
@@ -135,32 +140,31 @@
    
       <form action = "/uploader" method = "POST" 
          enctype = "multipart/form-data">
-         <input type = "file" name = "file" />
-         <input type = "submit"/>
+         <input type = "file" name = "file" style="font-size: 1.5rem;"/>
+         <input type = "submit" style="font-size: 1.5rem;"/>
       </form> 
       </div>
 
-      <p> 
-          Please upload a .wav file that you would like to have the pitch and instrument identified. convolutional nueral networks will output the instrument and pitch, as well as the pitch and instrument spectrogram, and the model information.  
-        
+      <p style="width: 1200px; padding: 0; padding-top: 40px; margin: 0 auto;"> 
+        Please upload a .wav file that you would like to have the pitch and instrument identified. The networks will output the instrument and pitch, as well as the pitch and instrument spectrogram, and the model information.  
       </p>
 
-      <ul>
-        The model can identify 82 pitches from E1 to C#8 and 14 instruments listed below:
-        <li>Accordian</li> 
-        <li>Alto Saxophone</li>
-        <li>Bass Tuba</li>
-        <li>Bassoon</li>
-        <li>Cello</li>
-        <li>Clarinet in Bb</li>
-        <li>Contrabass</li>
-        <li>Flute</li>
-        <li>French Horn</li>
-        <li>Oboe</li>
-        <li>Trombone</li>
-        <li>Trumpet in C</li>
-        <li>Viola</li>
-        <li>Violin</li>
+      <ul style="font-family: monospace;">
+        <p id="list" style="font-family: monospace; margin-bottom: 35px;">The model can identify 82 pitches from E1 to C#8 and 14 instruments listed below: </p>
+        <li><p id="li">Accordian</p></li> 
+        <li><p id="li">Alto Saxophone</p></li>
+        <li><p id="li">Bass Tuba</p></li>
+        <li><p id="li">Bassoon</p></li>
+        <li><p id="li">Cello</p></li>
+        <li><p id="li">Clarinet in Bb</p></li>
+        <li><p id="li">Contrabass</p></li>
+        <li><p id="li">Flute</p></li>
+        <li><p id="li">French Horn</p></li>
+        <li><p id="li">Oboe</p></li>
+        <li><p id="li">Trombone</p></li>
+        <li><p id="li">Trumpet in C</p></li>
+        <li><p id="li">Viola</p></li>
+        <li><p id="li">Violin</p></li>
     </ul>
     </body>
 </html>

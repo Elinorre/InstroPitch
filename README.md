@@ -2,12 +2,13 @@
 
 > Check [russian documentation](README_ru.md) if needed.
 
+> To run the application type ```python app.py```
 
-**Objectives**
-Use a deep learning neural network to predict a instrument and the note being played.
+**Objectives:**
+use a deep learning neural network to predict a instrument and the note being played.
 
-**Hypothesis**
-Can a neural network predict which instrument and note is being played with better than 80% accuracy?
+**Hypothesis:**
+can a neural network predict which instrument and note is being played with better than 80% accuracy?
 
 
 
@@ -36,17 +37,17 @@ Orginally, this sound data set was recorded for a project called Studio On Line 
 13. Oboe
 14. Alto Saxophone
 
-TinySOL Data:
+### TinySOL Data:
 
 The TinySOL data set contains 2913 audio WAV files at 44.1 kHz. There are 5-fold split of TinySOL. This split has been carefully balanced in terms of instrumentation, pitch range, and dynamics. Each audio file has an instrument playing one musical note. The information of the insturment family and sound, oridinary playing technique, pitch, dynamic, additional information can be found in the file path. Moreover, this information can be found in the metadata as text, which can be furthered cleaned, organized, and analyzed. 
 
-Metadata Data:
+### Metadata Data:
 
 The TinySOL_metadata.csv contains text data and information of each path file in the TinySOL. The csv file contains the path, fold ID, instrument family, abbreviation, name, technique abbreviation and name, pitch, pitch ID, dynamic, dynamic ID, instance ID, string ID, and the need for digital retuning. 
 
 
 
-**Technology**
+### Technology
 
 [Technology.md](support_info/technology.md)
 
