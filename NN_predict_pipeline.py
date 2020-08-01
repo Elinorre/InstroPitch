@@ -83,7 +83,7 @@ def predict_instrument(url):
     
     return NN_inst_pred  
 # %%
-url = "https://raw.githubusercontent.com/susiexia/AI_Music/susie/BTb-ord-A%231-ff-N-T30d.wav"
+url = "https://raw.githubusercontent.com/susiexia/InstroPitch/susie/BTb-ord-A%231-ff-N-T30d.wav"
 #url = "https://res.cloudinary.com/dmqj5ypfp/video/upload/v1588530259/Uploaded_audio/a0frl4m8km6rfi48ur6m.wav"
 predict_instrument(url)  
 
