@@ -1,5 +1,8 @@
 # InstroPitch
 
+> Check [russian documentation](README_ru.md) if needed.
+
+
 **Objectives**
 Use a deep learning neural network to predict a instrument and the note being played.
 
@@ -43,16 +46,15 @@ The TinySOL_metadata.csv contains text data and information of each path file in
 
 
 
-**Technoloy**
+**Technology**
 
 [Technology.md](support_info/technology.md)
 
 
 ## Goals and Objectives
+The goal and objective is to create a machine learning model to be able to identify the instrument and musical note, and have an accuracy of 80%. Ultimately, I should be able to input a .WAV file, and the musical note and insturment can be identified while the file/sound is being played back. 
 
-The goal and objective is to create a machine learning model to be able to identify the instrument and muscial note, and have an accuracy of 80%. Ultimately, I should be able to input a .WAV file, and the musical note and insturment can be identified while the file/sound is being played back. 
 ## ETL
-
 **Extract:** 
 The .wav audio files are extracted from an AWS S3 bucket where the audiofile dataset is stored using python library boto3.
 
@@ -78,7 +80,7 @@ Although there are simpler ways to identify pitch (a simple band pass filter), I
 The inputed audio files will be converted into spectograms (arrays). These spectrograms are only input into the CNN. Iwill use two different spectrograms to train two CNNs. The CNN that identifies pitch will be trained with short spectrograms from the middle of the audio file. The CNN that identifies insturments will be trained with longer spectrograms that begin at the start of the audio file.
 
 **What is the model’s accuracy?**
-There are currently three working scripts. All have a test accuracy greater than 90% for pitch prediction and greater than 85% for insturment prediction.
+There are currently three working scripts. All have a test accuracy greater than 90% for pitch prediction and greater than 85% for instrument prediction.
 
 **How does this model work?**
 - The input: one channel spectrogram 22, 128
@@ -94,13 +96,11 @@ I chose to train with spectrograms because they deconstruct sound signals into t
 The training and testing sets are into 25 and 75 respectively. Use sklearn.model_selection.train_test_split to split the data. The data is split into training and testing sets into 25 and 75 respectively. I use stratify = <output> to ensure the data is split uniformly.
 
 **✓ Explanation of model choice, including limitations and benefits**
-Convolutional Neural Network 
-Benefits: can apply the model to other sound files/signals and make other types of predictions. This model performs well with visual classification problems (spectrograms). 
-
-Limitations: 
- - It may get a less accuracy when there are lower sample rates because higher frequencies will not be preserved.
- - Notes played simultaneously, such as chords, may be difficult to identify because the frequncies could deconstruct one another.  
- - Similar neighboring pixels can often be assumed to belong to the same visual object. However in sound, different frequencies can be neighbors on the spectrogram
+- Benefits: can apply the model to other sound files/signals and make other types of predictions. This model performs well with visual classification problems (spectrograms)
+- Limitations: 
+ - - It may get a less accuracy when there are lower sample rates because higher frequencies will not be preserved.
+ - - Notes played simultaneously, such as chords, may be difficult to identify because the frequncies could deconstruct one another.  
+ - - Similar neighboring pixels can often be assumed to belong to the same visual object. However in sound, different frequencies can be neighbors on the spectrogram
  
 **Model Output:** 
 - Instrument: One out of the 14 instruments listed earlier
@@ -112,6 +112,7 @@ Limitations:
 AWS S3 bucket is used to store the audio files (.wav) dataset. The .wav files are extracted from the S3 Bucket and converted into spectrograms. Two dataframes are created, loaded and saved as tables to PostgresDB *(Please refer to ETL Section for more details)*. The two tables create are called *Notes_Spectrogram_Table* and *Instruments_Spectrogram_Table*.  Those two tables are then joined using an sql query to create a third table that contains spectrograms, instruments, and notes data.  
 
 PostGresDB is also used to create tables from original metadata files. 
+
 **Schema Diagram**
 
 ![Schema_Diagram.PNG](support_info/Schema_Diagram.PNG)
