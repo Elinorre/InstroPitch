@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-#from euwerkzg import secure_filename
 from werkzeug.utils import secure_filename
 
 import URLtest_predict_pipeline
